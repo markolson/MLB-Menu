@@ -7,7 +7,7 @@
 //
 
 #import "SYNAppDelegate.h"
-#import "GameViewController.h"
+#import "SYNGameViewController.h"
 #import "time.h"
 
 @implementation SYNAppDelegate
@@ -33,11 +33,11 @@
 -(void)addGame:(NSDictionary *)gamedict {
     [statusItem setHighlightMode:YES];
     NSMenuItem *game = [[NSMenuItem alloc]
-                        initWithTitle:[NSString stringWithFormat:@"%@ @@ %@", gamedict[@"away_team_name"], gamedict[@"home_team_name"]]
+                        initWithTitle:[NSString stringWithFormat:@"%@ @ %@", gamedict[@"away_team_name"], gamedict[@"home_team_name"]]
                         action:nil
                         keyEquivalent:@""];
     
-    GameViewController *gv = [[GameViewController alloc] init];
+    SYNGameViewController *gv = [[SYNGameViewController alloc] init];
     [game setView:gv.view];
     [gv setHomeLogo:[NSImage imageNamed:[NSString stringWithFormat:@"%@.png", gamedict[@"home_file_code"]]]];
     [gv setAwayLogo:[NSImage imageNamed:[NSString stringWithFormat:@"%@.png", gamedict[@"away_file_code"]]]];
@@ -59,7 +59,6 @@
     strftime(buffer, 26, "year_%Y/month_%m/day_%d", &timeStruct);
     NSString *url = [NSString stringWithFormat:@"http://mlb.mlb.com/gdcross/components/game/mlb/%s/grid.json", buffer];
     [self parseURL:url];
-    
 }
 
 @end

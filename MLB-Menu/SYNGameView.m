@@ -2,7 +2,7 @@
 //  SYNGameView.m
 //  MLB-Menu
 //
-//  Created by mark olson on 4/3/13.
+//  Created by mark olson on 4/4/13.
 //  Copyright (c) 2013 Syntaxi. All rights reserved.
 //
 
@@ -23,5 +23,4 @@
 - (void)mouseDown:(NSEvent *)theEvent {
     [controller clicked];
 }
-
 @end

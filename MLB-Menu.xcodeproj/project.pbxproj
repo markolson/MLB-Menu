@@ -38,7 +38,9 @@
 		4D169795170CFB4A00018463 /* sf.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16978F170CFB4A00018463 /* sf.png */; };
 		4D169797170CFBAA00018463 /* was.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D169796170CFBAA00018463 /* was.png */; };
 		4D169799170CFBE500018463 /* ana.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D169798170CFBE500018463 /* ana.png */; };
-		4DB7D544170CCBF000240F9A /* SYNGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB7D543170CCBF000240F9A /* SYNGameView.m */; };
+		4D9D2DA1170D9988006C8A6A /* SYNGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D2DA0170D9988006C8A6A /* SYNGameView.m */; };
+		4D9D2DA6170D9AFD006C8A6A /* SYNGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D9D2DA4170D9AFD006C8A6A /* SYNGameViewController.xib */; };
+		4D9D2DAB170D9B5D006C8A6A /* SYNGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D2DAA170D9B5D006C8A6A /* SYNGameViewController.m */; };
 		4DE0CDB5170D092400AAA468 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4DE0CDB3170D092400AAA468 /* LICENSE */; };
 		4DE0CDB6170D092400AAA468 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4DE0CDB4170D092400AAA468 /* README.md */; };
 		4DE94B58170BBCEF00879395 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE94B57170BBCEF00879395 /* Cocoa.framework */; };
@@ -82,11 +84,11 @@
 		4D16978F170CFB4A00018463 /* sf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sf.png; sourceTree = "<group>"; };
 		4D169796170CFBAA00018463 /* was.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = was.png; sourceTree = "<group>"; };
 		4D169798170CFBE500018463 /* ana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ana.png; sourceTree = "<group>"; };
-		4DB7D542170CCBF000240F9A /* SYNGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYNGameView.h; sourceTree = "<group>"; };
-		4DB7D543170CCBF000240F9A /* SYNGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYNGameView.m; sourceTree = "<group>"; };
-		4DE0CDB0170D091800AAA468 /* GameView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameView.xib; sourceTree = "<group>"; };
-		4DE0CDB1170D091800AAA468 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		4DE0CDB2170D091800AAA468 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		4D9D2D9F170D9988006C8A6A /* SYNGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYNGameView.h; sourceTree = "<group>"; };
+		4D9D2DA0170D9988006C8A6A /* SYNGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYNGameView.m; sourceTree = "<group>"; };
+		4D9D2DA4170D9AFD006C8A6A /* SYNGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYNGameViewController.xib; sourceTree = "<group>"; };
+		4D9D2DA9170D9B5D006C8A6A /* SYNGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYNGameViewController.h; sourceTree = "<group>"; };
+		4D9D2DAA170D9B5D006C8A6A /* SYNGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYNGameViewController.m; sourceTree = "<group>"; };
 		4DE0CDB3170D092400AAA468 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		4DE0CDB4170D092400AAA468 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 		4DE94B54170BBCEF00879395 /* MLB-Menu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MLB-Menu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,12 +160,12 @@
 			children = (
 				4DE94B69170BBCEF00879395 /* SYNAppDelegate.h */,
 				4DE94B6A170BBCEF00879395 /* SYNAppDelegate.m */,
-				4DB7D542170CCBF000240F9A /* SYNGameView.h */,
-				4DB7D543170CCBF000240F9A /* SYNGameView.m */,
 				4DE94B6C170BBCEF00879395 /* MainMenu.xib */,
-				4DE0CDB0170D091800AAA468 /* GameView.xib */,
-				4DE0CDB1170D091800AAA468 /* GameViewController.h */,
-				4DE0CDB2170D091800AAA468 /* GameViewController.m */,
+				4D9D2DA9170D9B5D006C8A6A /* SYNGameViewController.h */,
+				4D9D2DAA170D9B5D006C8A6A /* SYNGameViewController.m */,
+				4D9D2DA4170D9AFD006C8A6A /* SYNGameViewController.xib */,
+				4D9D2D9F170D9988006C8A6A /* SYNGameView.h */,
+				4D9D2DA0170D9988006C8A6A /* SYNGameView.m */,
 				4DE94B5E170BBCEF00879395 /* Supporting Files */,
 			);
 			path = "MLB-Menu";
@@ -312,6 +314,7 @@
 				4D169799170CFBE500018463 /* ana.png in Resources */,
 				4DE0CDB5170D092400AAA468 /* LICENSE in Resources */,
 				4DE0CDB6170D092400AAA468 /* README.md in Resources */,
+				4D9D2DA6170D9AFD006C8A6A /* SYNGameViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +327,8 @@
 			files = (
 				4DE94B64170BBCEF00879395 /* main.m in Sources */,
 				4DE94B6B170BBCEF00879395 /* SYNAppDelegate.m in Sources */,
-				4DB7D544170CCBF000240F9A /* SYNGameView.m in Sources */,
+				4D9D2DA1170D9988006C8A6A /* SYNGameView.m in Sources */,
+				4D9D2DAB170D9B5D006C8A6A /* SYNGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,7 +430,7 @@
 				GCC_PREFIX_HEADER = "MLB-Menu/MLB-Menu-Prefix.pch";
 				INFOPLIST_FILE = "MLB-Menu/MLB-Menu-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -440,7 +444,7 @@
 				GCC_PREFIX_HEADER = "MLB-Menu/MLB-Menu-Prefix.pch";
 				INFOPLIST_FILE = "MLB-Menu/MLB-Menu-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

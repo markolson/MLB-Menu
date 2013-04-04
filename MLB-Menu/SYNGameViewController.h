@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface GameViewController : NSViewController {
+@interface SYNGameViewController : NSViewController {
     IBOutlet NSImageView *home;
     IBOutlet NSImageView *away;
     IBOutlet NSTextField *gametime;

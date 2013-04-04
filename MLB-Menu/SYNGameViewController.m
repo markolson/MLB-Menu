@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 Syntaxi. All rights reserved.
 //
 
-#import "GameViewController.h"
+#import "SYNGameViewController.h"
 #import "SYNGameView.h"
 
-@interface GameViewController ()
+@interface SYNGameViewController ()
 
 @end
 
-@implementation GameViewController
+@implementation SYNGameViewController
 @synthesize raw;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

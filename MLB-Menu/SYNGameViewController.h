@@ -11,8 +11,8 @@
 @interface SYNGameViewController : NSViewController {
     IBOutlet NSImageView *home;
     IBOutlet NSImageView *away;
-    IBOutlet NSTextField *gametime;
     IBOutlet NSTableView *mediaSources;
+    IBOutlet NSSegmentedControl *scoreBox;
 }
 
 @property (nonatomic, retain) NSDictionary *raw;

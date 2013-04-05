@@ -10,6 +10,8 @@
 #import "SYNGameViewController.h"
 #import "time.h"
 
+#define kEndGamesList 1869
+
 @implementation SYNAppDelegate
 
 - (void)awakeFromNib {
@@ -20,13 +22,34 @@
     [statusItem setEnabled:YES];
     [statusItem setHighlightMode:YES];
     [statusMenu setDelegate:self];
+    
+    
+}
+
+-(IBAction)updateGames:(id)sender {
+    time_t currentTime = time(NULL);
+    struct tm timeStruct;
+    localtime_r(&currentTime, &timeStruct);
+    char buffer[26];
+    strftime(buffer, 26, "year_%Y/month_%m/day_%d", &timeStruct);
+    NSString *url = [NSString stringWithFormat:@"http://mlb.mlb.com/gdcross/components/game/mlb/%s/grid.json", buffer];
+    [self parseURL:url];
 }
 
 -(void)parseURL:(NSString*)theURL {
+    NSLog(@"%@", theURL);
     NSError *error = nil;
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:theURL]];
     NSDictionary *parsed = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingMutableContainers error: &error];
     NSArray *json_games = (NSMutableArray *)parsed[@"data"][@"games"][@"game"];
+    
+    for (NSMenuItem *item in [statusMenu itemArray]){
+        if(item.tag >= kEndGamesList){
+            break;
+        } else {
+            [statusMenu removeItem:item];
+        }
+    }
     
     for (NSDictionary *g in [json_games reverseObjectEnumerator]) {
         [self addGame:g];
@@ -42,6 +65,7 @@
     SYNGameViewController *gv = [[SYNGameViewController alloc] init];
     [game setView:gv.view];
     [game setEnabled:YES];
+    [game setTag:0];
     [gv setRaw:gamedict];
     [statusMenu insertItem:game atIndex:0];
 
@@ -49,17 +73,13 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    time_t currentTime = time(NULL);
-    struct tm timeStruct;
-    localtime_r(&currentTime, &timeStruct);
-    char buffer[26];
-    strftime(buffer, 26, "year_%Y/month_%m/day_%d", &timeStruct);
-    NSString *url = [NSString stringWithFormat:@"http://mlb.mlb.com/gdcross/components/game/mlb/%s/grid.json", buffer];
-    [self parseURL:url];
+    [NSTimer scheduledTimerWithTimeInterval:(60.0 * 2) target:self selector:@selector(updateGames:) userInfo:nil repeats:YES];
+    [self updateGames:nil];
+
 }
 
 - (void)menu:(NSMenu *)menu willHighlightItem:(NSMenuItem *)item {
-    NSLog(@"%@", item);
+    //NSLog(@"%@", item);
 }
 
 @end

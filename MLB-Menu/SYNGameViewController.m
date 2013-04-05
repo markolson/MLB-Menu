@@ -35,8 +35,8 @@
         if([raw[@"status"] isEqualToString:@"Final"]) {
             [scoreBox setLabel:@"Final" forSegment:1];
         }else{
-            NSString *tb = ([raw[@"top_inning"] isEqualToString:@"Y"]) ? @"Top" : @"Bot";
-            [scoreBox setLabel:[NSString stringWithFormat:@"%@ %@%@", tb, raw[@"inning"], [self ordinalFor:raw[@"inning"]]] forSegment:1];
+            NSString *tb = ([raw[@"top_inning"] isEqualToString:@"Y"]) ? @"▲" : @"▼";
+            [scoreBox setLabel:[NSString stringWithFormat:@"%@%@ %@", raw[@"inning"], [self ordinalFor:raw[@"inning"]], tb] forSegment:1];
         }
     }
 }

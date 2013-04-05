@@ -21,15 +21,11 @@
     return self;
 }
 
-- (void)setHomeLogo:(NSImage *)_homeLogo {
-    [home setImage:_homeLogo];
-}
-- (void)setAwayLogo:(NSImage *)_awayLogo {
-    [away setImage:_awayLogo];
-}
-
--(void)setStartTime:(NSString *)time {
-    [gametime setStringValue:[NSString stringWithFormat:@"%@", time]];
+-(void)setRaw:(NSDictionary *)_raw {
+    raw = _raw;
+    [home setImage:[NSImage imageNamed:[NSString stringWithFormat:@"%@.png", raw[@"home_file_code"]]]];
+    [away setImage:[NSImage imageNamed:[NSString stringWithFormat:@"%@.png", raw[@"away_file_code"]]]];
+    [gametime setStringValue:[NSString stringWithFormat:@"%@", raw[@"event_time"]]];
 }
 
 -(void)clicked {

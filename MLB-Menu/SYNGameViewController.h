@@ -15,10 +15,6 @@
     IBOutlet NSTableView *mediaSources;
 }
 
-- (void)setAwayLogo:(NSImage *)logo;
-- (void)setHomeLogo:(NSImage *)logo;
-- (void)setStartTime:(NSString *)time;
-
 @property (nonatomic, retain) NSDictionary *raw;
 
 -(void)clicked;

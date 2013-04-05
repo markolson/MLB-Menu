@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SYNAppDelegate : NSObject <NSApplicationDelegate> {
+@interface SYNAppDelegate : NSObject <NSApplicationDelegate, NSMenuDelegate> {
     IBOutlet NSMenu *statusMenu;
     
     NSStatusItem *statusItem;

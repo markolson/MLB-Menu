@@ -23,4 +23,5 @@
 - (void)mouseDown:(NSEvent *)theEvent {
     [controller clicked];
 }
+
 @end

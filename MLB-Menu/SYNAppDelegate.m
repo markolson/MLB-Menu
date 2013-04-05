@@ -17,6 +17,9 @@
     [statusItem setMenu:statusMenu];
 
     [statusItem setImage:[NSImage imageNamed:@"ball.png"]];
+    [statusItem setEnabled:YES];
+    [statusItem setHighlightMode:YES];
+    [statusMenu setDelegate:self];
 }
 
 -(void)parseURL:(NSString*)theURL {
@@ -31,7 +34,6 @@
 }
 
 -(void)addGame:(NSDictionary *)gamedict {
-    [statusItem setHighlightMode:YES];
     NSMenuItem *game = [[NSMenuItem alloc]
                         initWithTitle:[NSString stringWithFormat:@"%@ @ %@", gamedict[@"away_team_name"], gamedict[@"home_team_name"]]
                         action:nil
@@ -39,19 +41,14 @@
     
     SYNGameViewController *gv = [[SYNGameViewController alloc] init];
     [game setView:gv.view];
-    [gv setHomeLogo:[NSImage imageNamed:[NSString stringWithFormat:@"%@.png", gamedict[@"home_file_code"]]]];
-    [gv setAwayLogo:[NSImage imageNamed:[NSString stringWithFormat:@"%@.png", gamedict[@"away_file_code"]]]];
-    [gv setStartTime:gamedict[@"event_time"]];
+    [game setEnabled:YES];
     [gv setRaw:gamedict];
-    [statusItem setEnabled:YES];
-    [statusItem setHighlightMode:YES];
     [statusMenu insertItem:game atIndex:0];
 
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    
     time_t currentTime = time(NULL);
     struct tm timeStruct;
     localtime_r(&currentTime, &timeStruct);
@@ -59,6 +56,10 @@
     strftime(buffer, 26, "year_%Y/month_%m/day_%d", &timeStruct);
     NSString *url = [NSString stringWithFormat:@"http://mlb.mlb.com/gdcross/components/game/mlb/%s/grid.json", buffer];
     [self parseURL:url];
+}
+
+- (void)menu:(NSMenu *)menu willHighlightItem:(NSMenuItem *)item {
+    NSLog(@"%@", item);
 }
 
 @end

@@ -38,7 +38,6 @@
 		4D169795170CFB4A00018463 /* sf.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D16978F170CFB4A00018463 /* sf.png */; };
 		4D169797170CFBAA00018463 /* was.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D169796170CFBAA00018463 /* was.png */; };
 		4D169799170CFBE500018463 /* ana.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D169798170CFBE500018463 /* ana.png */; };
-		4D62F797170E88BB000414DB /* Baseball.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4D62F796170E88BB000414DB /* Baseball.icns */; };
 		4D9D2DA1170D9988006C8A6A /* SYNGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D2DA0170D9988006C8A6A /* SYNGameView.m */; };
 		4D9D2DA6170D9AFD006C8A6A /* SYNGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D9D2DA4170D9AFD006C8A6A /* SYNGameViewController.xib */; };
 		4D9D2DAB170D9B5D006C8A6A /* SYNGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D2DAA170D9B5D006C8A6A /* SYNGameViewController.m */; };
@@ -50,7 +49,6 @@
 		4DE94B68170BBCEF00879395 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4DE94B66170BBCEF00879395 /* Credits.rtf */; };
 		4DE94B6B170BBCEF00879395 /* SYNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE94B6A170BBCEF00879395 /* SYNAppDelegate.m */; };
 		4DE94B6E170BBCEF00879395 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DE94B6C170BBCEF00879395 /* MainMenu.xib */; };
-		4DE94B75170BC1E700879395 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DE94B74170BC1E700879395 /* ball.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,7 +83,6 @@
 		4D16978F170CFB4A00018463 /* sf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sf.png; sourceTree = "<group>"; };
 		4D169796170CFBAA00018463 /* was.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = was.png; sourceTree = "<group>"; };
 		4D169798170CFBE500018463 /* ana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ana.png; sourceTree = "<group>"; };
-		4D62F796170E88BB000414DB /* Baseball.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Baseball.icns; sourceTree = "<group>"; };
 		4D9D2D9F170D9988006C8A6A /* SYNGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYNGameView.h; sourceTree = "<group>"; };
 		4D9D2DA0170D9988006C8A6A /* SYNGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYNGameView.m; sourceTree = "<group>"; };
 		4D9D2DA4170D9AFD006C8A6A /* SYNGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SYNGameViewController.xib; sourceTree = "<group>"; };
@@ -106,7 +103,6 @@
 		4DE94B69170BBCEF00879395 /* SYNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYNAppDelegate.h; sourceTree = "<group>"; };
 		4DE94B6A170BBCEF00879395 /* SYNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYNAppDelegate.m; sourceTree = "<group>"; };
 		4DE94B6D170BBCEF00879395 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		4DE94B74170BC1E700879395 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +120,6 @@
 		4DE94B4B170BBCEF00879395 = {
 			isa = PBXGroup;
 			children = (
-				4D62F796170E88BB000414DB /* Baseball.icns */,
 				4DE94B5D170BBCEF00879395 /* MLB-Menu */,
 				4DE94B56170BBCEF00879395 /* Frameworks */,
 				4DE94B55170BBCEF00879395 /* Products */,
@@ -180,7 +175,6 @@
 				4DE0CDB4170D092400AAA468 /* README.md */,
 				4DE94B60170BBCEF00879395 /* InfoPlist.strings */,
 				4DE94B76170BC4C700879395 /* logos */,
-				4DE94B74170BC1E700879395 /* ball.png */,
 				4DE94B5F170BBCEF00879395 /* MLB-Menu-Info.plist */,
 				4DE0CDB3170D092400AAA468 /* LICENSE */,
 				4DE94B63170BBCEF00879395 /* main.m */,
@@ -283,7 +277,6 @@
 				4DE94B62170BBCEF00879395 /* InfoPlist.strings in Resources */,
 				4DE94B68170BBCEF00879395 /* Credits.rtf in Resources */,
 				4DE94B6E170BBCEF00879395 /* MainMenu.xib in Resources */,
-				4DE94B75170BC1E700879395 /* ball.png in Resources */,
 				4D169771170CFA5900018463 /* atl.png in Resources */,
 				4D169772170CFA5900018463 /* bal.png in Resources */,
 				4D169773170CFA5900018463 /* bos.png in Resources */,
@@ -318,7 +311,6 @@
 				4DE0CDB5170D092400AAA468 /* LICENSE in Resources */,
 				4DE0CDB6170D092400AAA468 /* README.md in Resources */,
 				4D9D2DA6170D9AFD006C8A6A /* SYNGameViewController.xib in Resources */,
-				4D62F797170E88BB000414DB /* Baseball.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,12 +18,10 @@
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [statusItem setMenu:statusMenu];
 
-    [statusItem setImage:[NSImage imageNamed:@"ball.png"]];
+    [statusItem setTitle:@"⚾"];
     [statusItem setEnabled:YES];
     [statusItem setHighlightMode:YES];
     [statusMenu setDelegate:self];
-    
-    
 }
 
 -(IBAction)updateGames:(id)sender {

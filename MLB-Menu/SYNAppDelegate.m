@@ -18,7 +18,15 @@
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [statusItem setMenu:statusMenu];
 
-    [statusItem setTitle:@"⚾"];
+    NSDictionary *fontattr;
+    if ([[[[NSFontManager alloc] init] availableMembersOfFontFamily:@"Apple Color Emoji"] objectAtIndex:0]) {
+        fontattr = [NSDictionary dictionaryWithObject:[NSFont fontWithName:@"Apple Color Emoji" size:13] forKey:NSFontAttributeName];
+    }else{
+        fontattr = @{};
+    }
+    NSAttributedString *title = [[NSAttributedString alloc] initWithString:@"⚾" attributes:fontattr];
+    
+    [statusItem setAttributedTitle:title];
     [statusItem setEnabled:YES];
     [statusItem setHighlightMode:YES];
     [statusMenu setDelegate:self];

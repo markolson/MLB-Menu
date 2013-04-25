@@ -25,18 +25,22 @@
     raw = _raw;
     [home setImage:[NSImage imageNamed:[NSString stringWithFormat:@"%@.png", raw[@"home_file_code"]]]];
     [away setImage:[NSImage imageNamed:[NSString stringWithFormat:@"%@.png", raw[@"away_file_code"]]]];
-    if([raw[@"inning"] isEqualToString:@""]) {
+    if([raw[@"status"] isEqualToString:@"Scheduled"] || [raw[@"status"] isEqualToString:@"Preview"] || [raw[@"status"] isEqualToString:@"Pre-Game"] || [raw[@"status"] isEqualToString:@"Warmup"]) {
         [scoreBox setSegmentCount:1];
         [scoreBox setLabel:raw[@"event_time"] forSegment:0];
+        [scoreBox setWidth:96 forSegment:0];
+    }else if ([raw[@"status"] isEqualToString:@"Delayed Start"] || [raw[@"status"] isEqualToString:@"Delayed"] || [raw[@"status"] isEqualToString:@"Cancelled"] || [raw[@"status"] isEqualToString:@"Postponed"]) {
+        [scoreBox setSegmentCount:1];
+        [scoreBox setLabel:[NSString stringWithFormat:@"%@", raw[@"status"]] forSegment:0];
         [scoreBox setWidth:96 forSegment:0];
     }else{
         [scoreBox setLabel:raw[@"away_score"] forSegment:0];
         [scoreBox setLabel:raw[@"home_score"] forSegment:2];
-        if([raw[@"status"] isEqualToString:@"Final"]) {
-            [scoreBox setLabel:@"Final" forSegment:1];
-        }else{
+        if([raw[@"status"] isEqualToString:@"In Progress"]) {
             NSString *tb = ([raw[@"top_inning"] isEqualToString:@"Y"]) ? @"▲" : @"▼";
             [scoreBox setLabel:[NSString stringWithFormat:@"%@%@ %@", raw[@"inning"], [self ordinalFor:raw[@"inning"]], tb] forSegment:1];
+        }else{
+            [scoreBox setLabel:[NSString stringWithFormat:@"%@", raw[@"status"]] forSegment:1];
         }
     }
 }

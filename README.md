@@ -3,6 +3,8 @@
 I wanted a little menu on my mac to jump to different games. Here's a first crack at it.
 Click on the poorly-rendered baseball and today's games are listed. Pick one and it opens your default browser to the Gameday page.
 
+[Download the newest version here](https://github.com/markolson/MLB-Menu/releases/tag/0.5)
+
 ## TODO
 
 * Submenus of the different audio/video sources

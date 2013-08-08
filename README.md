@@ -5,6 +5,10 @@ Click on the poorly-rendered baseball and today's games are listed. Pick one and
 
 [Download the newest version here](https://github.com/markolson/MLB-Menu/releases/tag/0.5)
 
+## Forks!
+
+NFL app at: https://github.com/kchau/NFL-Menu
+
 ## TODO
 
 * Submenus of the different audio/video sources

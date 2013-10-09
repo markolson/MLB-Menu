@@ -79,9 +79,8 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    [NSTimer scheduledTimerWithTimeInterval:(60.0 * 2) target:self selector:@selector(updateGames:) userInfo:nil repeats:YES];
-    [self updateGames:nil];
-
+    updater = [[NSTimer alloc] initWithFireDate:[[NSDate date] dateByAddingTimeInterval:0.1] interval:30.0 target:self selector:@selector(updateGames:) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:updater forMode:NSRunLoopCommonModes];
 }
 
 - (void)menu:(NSMenu *)menu willHighlightItem:(NSMenuItem *)item {

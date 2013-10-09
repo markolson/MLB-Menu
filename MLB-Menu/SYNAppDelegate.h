@@ -13,6 +13,7 @@
     
     NSStatusItem *statusItem;
     NSMutableArray *gameArray;
+    NSTimer *updater;
 }
 
 @property (assign) IBOutlet NSWindow *window;

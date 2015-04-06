@@ -47,7 +47,18 @@
     NSError *error = nil;
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:theURL]];
     NSDictionary *parsed = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingMutableContainers error: &error];
-    NSArray *json_games = (NSMutableArray *)parsed[@"data"][@"games"][@"game"];
+    // there are some days that just have single games, and use a different structure.
+    // a really stupid structure, actually. This is pretty horrible code because it's actually
+    // either a dictionary or an array. I should be able to introspect this. Maybe Swift will let me??
+    id json_games = parsed[@"data"][@"games"][@"game"];
+    NSMutableArray *gameList = [[NSMutableArray alloc] init];
+
+    // there is only a single game today if it's a dictionary
+    if ([json_games isKindOfClass: [NSDictionary class]]) {
+        [gameList addObject:json_games];
+    }else{
+        gameList = (NSMutableArray *)json_games;
+    }
     
     for (NSMenuItem *item in [statusMenu itemArray]){
         if(item.tag >= kEndGamesList){
@@ -57,8 +68,8 @@
         }
     }
     
-    for (NSDictionary *g in [json_games reverseObjectEnumerator]) {
-        [self addGame:g];
+    for (NSDictionary *g in [gameList reverseObjectEnumerator]) {
+      [self addGame:g];
     }
 }
 

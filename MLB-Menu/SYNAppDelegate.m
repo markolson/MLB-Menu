@@ -38,7 +38,10 @@
     localtime_r(&currentTime, &timeStruct);
     char buffer[26];
     strftime(buffer, 26, "year_%Y/month_%m/day_%d", &timeStruct);
-    NSString *url = [NSString stringWithFormat:@"http://mlb.mlb.com/gdcross/components/game/mlb/%s/grid.json", buffer];
+    // /gdcross/components/game/mlb/year_" + yyyy + "/month_" + mm + "/day_" + dd + "/grid.json
+    // http://gd2.mlb.com/components/game/mlb/year_2019/month_03/day_28/master_scoreboard.json
+    NSString *url = [NSString
+                     stringWithFormat:@"http://mlb.mlb.com/gdcross/components/game/mlb/%s/master_scoreboard.json", buffer];
     [self parseURL:url];
 }
 

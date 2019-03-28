@@ -25,24 +25,24 @@
     raw = _raw;
     [home setImage:[NSImage imageNamed:[NSString stringWithFormat:@"%@.png", raw[@"home_file_code"]]]];
     [away setImage:[NSImage imageNamed:[NSString stringWithFormat:@"%@.png", raw[@"away_file_code"]]]];
-    if([raw[@"status"] isEqualToString:@"Scheduled"] || [raw[@"status"] isEqualToString:@"Preview"] || [raw[@"status"] isEqualToString:@"Pre-Game"] || [raw[@"status"] isEqualToString:@"Warmup"]) {
+    if([raw[@"status"][@"status"] isEqualToString:@"Scheduled"] || [raw[@"status"][@"status"] isEqualToString:@"Preview"] || [raw[@"status"][@"status"] isEqualToString:@"Pre-Game"] || [raw[@"status"][@"status"] isEqualToString:@"Warmup"]) {
         [scoreBox setSegmentCount:1];
-        [scoreBox setLabel:raw[@"event_time"] forSegment:0];
+        [scoreBox setLabel:[NSString stringWithFormat:@"%@ %@", raw[@"home_time"], raw[@"home_time_zone"]] forSegment:0];
         [scoreBox setWidth:96 forSegment:0];
-    }else if ([raw[@"status"] isEqualToString:@"Delayed Start"] || [raw[@"status"] isEqualToString:@"Delayed"] || [raw[@"status"] isEqualToString:@"Cancelled"] || [raw[@"status"] isEqualToString:@"Postponed"]) {
+    }else if ([raw[@"status"][@"status"] isEqualToString:@"Delayed Start"] || [raw[@"status"][@"status"] isEqualToString:@"Delayed"] || [raw[@"status"][@"status"] isEqualToString:@"Cancelled"] || [raw[@"status"][@"status"] isEqualToString:@"Postponed"]) {
         [scoreBox setSegmentCount:1];
-        [scoreBox setLabel:[NSString stringWithFormat:@"%@", raw[@"status"]] forSegment:0];
+        [scoreBox setLabel:[NSString stringWithFormat:@"%@", raw[@"status"][@"status"]] forSegment:0];
         [scoreBox setWidth:96 forSegment:0];
     }else{
-        [scoreBox setLabel:raw[@"away_score"] forSegment:0];
-        [scoreBox setLabel:raw[@"home_score"] forSegment:2];
-        if([raw[@"status"] isEqualToString:@"In Progress"]) {
-            NSString *tb = ([raw[@"top_inning"] isEqualToString:@"Y"]) ? @"▲" : @"▼";
+        [scoreBox setLabel:raw[@"linescore"][@"r"][@"away"] forSegment:0];
+        [scoreBox setLabel:raw[@"linescore"][@"r"][@"home"] forSegment:2];
+        if([raw[@"status"][@"status"] isEqualToString:@"In Progress"]) {
+            NSString *tb = ([raw[@"status"][@"inning_state"] isEqualToString:@"Top"]) ? @"▲" : @"▼";
             [scoreBox setLabel:[NSString stringWithFormat:@"%@%@ %@", raw[@"inning"], [self ordinalFor:raw[@"inning"]], tb] forSegment:1];
-        }else if([raw[@"status"] isEqualToString:@"Final"] || [raw[@"status"] isEqualToString:@"Game Over"]) {
+        }else if([raw[@"status"][@"status"] isEqualToString:@"Final"] || [raw[@"status"][@"status"] isEqualToString:@"Game Over"]) {
              [scoreBox setLabel:@"Final" forSegment:1];
         }else {
-            [scoreBox setLabel:[NSString stringWithFormat:@"%@", raw[@"status"]] forSegment:1];
+            [scoreBox setLabel:[NSString stringWithFormat:@"%@", raw[@"status"][@"status"]] forSegment:1];
         }
     }
 }
